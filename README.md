@@ -1,39 +1,108 @@
-# Proyecto de Econometría Aplicada
+# 📊 Proyecto de Econometría Aplicada
 
-## 1. Introducción
-Este proyecto analiza la relación entre el índice S&P 500 y el tipo de cambio USD/MXN utilizando modelos econométricos VAR, GARCH y EGARCH.
+## 🎯 1. Objetivo
 
----
+Este proyecto analiza la relación entre el índice bursátil S&P 500 y el tipo de cambio USD/MXN, utilizando modelos econométricos de series de tiempo:
 
-## 2. Datos
-Los datos fueron obtenidos de Yahoo Finance:
-- S&P 500
-- USD/MXN
-
-Se trabajó con rendimientos logarítmicos.
+- VAR (Vector Autoregressive)
+- VECM (Vector Error Correction Model)
+- GARCH
+- EGARCH
 
 ---
 
-## 3. Metodología
+## 📁 2. Datos
 
-### VAR
-Se analiza la relación dinámica entre ambas variables.
+Los datos fueron obtenidos de Yahoo Finance y corresponden a:
 
-### GARCH
-Se modela la volatilidad del S&P 500.
+- 📈 S&P 500 (^GSPC)
+- 💱 Tipo de cambio USD/MXN (MXN=X)
 
-### EGARCH
-Se analiza asimetría en los shocks.
-
----
-
-## 4. Resultados
-
-- Existe relación entre variables.
-- La volatilidad es persistente.
-- Los shocks negativos afectan más que los positivos.
+📅 Periodo: 2015 - actualidad  
+📊 Frecuencia: diaria  
+📌 Transformación: rendimientos logarítmicos
 
 ---
 
-## 5. Conclusión
-Los modelos permiten analizar la dinámica y volatilidad del mercado financiero de manera eficiente.
+## 🧠 3. Metodología
+
+### 📌 VAR
+Modelo multivariado que analiza la relación dinámica entre las variables.
+
+### 📌 Cointegración (Johansen)
+Se evalúa si existe una relación de equilibrio de largo plazo entre las variables.
+
+### 📌 VECM
+Modelo que corrige desviaciones del equilibrio de largo plazo.
+
+### 📌 GARCH
+Modela la volatilidad condicional del mercado.
+
+### 📌 EGARCH
+Permite capturar asimetrías en los shocks financieros.
+
+---
+
+## 📊 4. Resultados
+
+### 📈 VAR
+- Existe interacción significativa entre las variables.
+- Se observa dependencia temporal entre SP500 y USD/MXN.
+
+### 🔗 Cointegración (Johansen)
+- Se encontró evidencia de cointegración.
+- Las variables tienen relación de largo plazo.
+
+### ⚖️ VECM
+- El sistema corrige desviaciones del equilibrio.
+- Los coeficientes de ajuste son significativos.
+
+### 📉 GARCH
+- La volatilidad es persistente (clustering).
+- Alta sensibilidad a shocks del mercado.
+
+### ⚡ EGARCH
+- Existe asimetría en los shocks.
+- Las malas noticias afectan más que las buenas.
+
+---
+
+## 📊 5. Gráficas (incluidas en el proyecto)
+
+El análisis incluye:
+
+- Evolución de rendimientos del S&P 500
+- Evolución del tipo de cambio USD/MXN
+- Volatilidad condicional (GARCH)
+- Shock asimétrico (EGARCH)
+
+📌 Estas gráficas se generan automáticamente al ejecutar el código en `main.py`.
+
+---
+
+## 🧰 6. Herramientas utilizadas
+
+- Python 🐍
+- Pandas
+- NumPy
+- Statsmodels
+- ARCH package
+- Yahoo Finance API
+- Visual Studio Code
+
+---
+
+## 🚀 7. Conclusiones
+
+- Existe relación entre el mercado bursátil y el tipo de cambio.
+- Se confirma cointegración entre las variables.
+- Los mercados presentan volatilidad persistente.
+- Los shocks negativos tienen mayor impacto que los positivos.
+- Los modelos utilizados permiten capturar dinámicas de corto y largo plazo.
+
+---
+
+## 📌 8. Cómo ejecutar el proyecto
+
+```bash
+python main.py
