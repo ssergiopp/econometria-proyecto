@@ -30,3 +30,16 @@ johansen_test(data)
 
 print("\n--- VECM ---")
 run_vecm(data)
+import matplotlib.pyplot as plt
+
+# 📊 1. Serie de rendimientos SP500
+plt.figure()
+data["SP500"].plot(title="Rendimientos S&P 500")
+plt.savefig("sp500.png")
+plt.close()
+
+# 📊 2. Serie USD/MXN
+plt.figure()
+data["USD_MXN"].plot(title="Rendimientos USD/MXN")
+plt.savefig("usdmxn.png")
+plt.close()

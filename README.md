@@ -106,3 +106,11 @@ El análisis incluye:
 
 ```bash
 python main.py
+
+## 📊 Gráficas del análisis
+
+### Rendimientos S&P 500
+![SP500](sp500.png)
+
+### Tipo de cambio USD/MXN
+![USD MXN](usdmxn.png)
