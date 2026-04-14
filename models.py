@@ -23,3 +23,24 @@ def run_egarch(series):
     res = model.fit(disp="off")
     print(res.summary())
     return res
+
+from statsmodels.tsa.vector_ar.vecm import coint_johansen, VECM
+
+def johansen_test(data):
+    result = coint_johansen(data, det_order=0, k_ar_diff=1)
+
+    print("\n=== JOHANSEN TEST ===")
+    print("Eigenvalues:", result.eig)
+    print("Trace statistic:", result.lr1)
+    print("Critical values (90%, 95%, 99%):", result.cvt)
+
+    return result
+
+def run_vecm(data):
+    model = VECM(data, k_ar_diff=1, coint_rank=1)
+    res = model.fit()
+
+    print("\n=== VECM SUMMARY ===")
+    print(res.summary())
+
+    return res

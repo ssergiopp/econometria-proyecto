@@ -24,3 +24,9 @@ plt.show()
 
 data["USD_MXN"].plot(title="Rendimientos USD/MXN")
 plt.show()
+from models import run_var, run_garch, run_egarch, johansen_test, run_vecm
+print("\n--- JOHANSEN TEST ---")
+johansen_test(data)
+
+print("\n--- VECM ---")
+run_vecm(data)
